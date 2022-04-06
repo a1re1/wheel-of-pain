@@ -1,7 +1,30 @@
 //
-// Shuffle Exercises
+// Randomize Exercises
 //
 
+exerciseList = [
+  // ["name", "reps", weight],
+  ["pushups", "20", 5],
+  ["pushups", "50", 1],
+  ["burpees", "5", 5],
+  ["burpees", "10", 3],
+  ["situps", "10", 5],
+  ["situps", "20", 5],
+  ["situps", "50", 2],
+  ["pullups", "5", 5],
+  ["pullups", "10", 2],
+  ["pullups", "20", 1],
+  ["dumbell bench", "5", 5],
+  ["dumbell bench", "10", 6],
+  ["dumbell bench", "20", 5],
+  ["dumbell curl", "5", 5],
+  ["dumbell curl", "10", 5],
+  ["dumbell curl", "20", 5],
+  ["jumping jack", "10", 5],
+  ["jumping jack", "20", 5],
+  ["dumbell squat", "10", 5],
+  ["dumbell squat", "20", 2],
+];
 
 function shuffleArray(array) {
   for (var i = array.length - 1; i > 0; i--) {
@@ -13,11 +36,28 @@ function shuffleArray(array) {
   return array;
 }
 
+function createExercise(name, reps) {
+  let exercise = document.createElement("div");
+  exercise.className = "exercise";
+  exercise.innerText = name;
+
+  let repsElement = document.createElement("span");
+  repsElement.innerText = "(" + reps + ")";
+
+  exercise.appendChild(repsElement)
+  return exercise;
+}
+
 var container = document.getElementById("exercises");
-var elementsArray = Array.prototype.slice.call(container.getElementsByClassName('exercise'));
-  elementsArray.forEach(function(element){
-  container.removeChild(element);
-})
+let elementsArray = []
+exerciseList.forEach(exercise => {
+  weight = exercise[2];
+  for(let i = 0; i < 5; i++) {
+    exerciseElement = createExercise(exercise[0], exercise[1]);
+    elementsArray.push(exerciseElement);
+  }
+});
+
 shuffleArray(elementsArray);
 elementsArray.forEach(function(element){
   container.appendChild(element);

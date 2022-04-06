@@ -16,6 +16,7 @@ h1 {
 
 h4 {
   font-size: 24px;
+  color: #0cad1f;
 }
 
 .container {
@@ -46,14 +47,16 @@ h4 {
 
 .wipe-in {
   opacity: 1;
+  top: 0%;
   transition: transform 200ms, opacity 200ms;
-  transform: translateY(-100%);
+  transform: translateY(100%);
 }
 
 .wipe-out {
   opacity: 0;
   transition: transform 200ms, opacity 200ms;
-  transform: translateY(-200%);
+  transform: translateY(100%);
+  transform: scale(30%);
 }
 
 .exercise span {
