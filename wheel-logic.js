@@ -6,6 +6,7 @@ exerciseList = [
   // ["name", "reps", weight],
   ["pushups", "20", 5],
   ["pushups", "50", 1],
+  ["one handed pushups", "5", 1],
   ["burpees", "5", 5],
   ["burpees", "10", 3],
   ["situps", "10", 5],
@@ -14,6 +15,7 @@ exerciseList = [
   ["pullups", "5", 5],
   ["pullups", "10", 2],
   ["pullups", "20", 1],
+  ["lunges", "10", 5],
   ["dumbell bench", "5", 5],
   ["dumbell bench", "10", 6],
   ["dumbell bench", "20", 5],
@@ -24,6 +26,10 @@ exerciseList = [
   ["jumping jack", "20", 5],
   ["dumbell squat", "10", 5],
   ["dumbell squat", "20", 2],
+  ["mountain climbers", "20", 4],
+  ["chair sits", "30", 4],
+  ["chair sits", "45", 3],
+  ["chair sits", "60", 2]
 ];
 
 function shuffleArray(array) {
@@ -51,6 +57,7 @@ function createExercise(name, reps) {
 var container = document.getElementById("exercises");
 let elementsArray = []
 exerciseList.forEach(exercise => {
+  console.log(exercise)
   weight = exercise[2];
   for(let i = 0; i < 5; i++) {
     exerciseElement = createExercise(exercise[0], exercise[1]);
